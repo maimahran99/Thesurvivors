@@ -14,7 +14,7 @@ window.SITE_DATA = {
       { en: "Images & Visuals", progress: 100 },
       { en: "Audio & Voice", progress: 100 },
       { en: "Programming", progress: 100 },
-      { en: "Testing & Polish", progress: 100 }
+      { en: "Testing & Polish", progress: 80 }
     ]
   }
 };
