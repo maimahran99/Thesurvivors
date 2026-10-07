@@ -5,7 +5,7 @@ window.SITE_DATA = {
   links: { android: "https://play.google.com/store/apps/details?id=com.thesurvivors.game", ios: "" },
   chapter4: {
     overall: null,
-    updatedAt: "2026-09-18",
+    updatedAt: "2026-10-07",
     releaseDate: "",
     // Add real milestones when announced, e.g. { en: "Story", progress: 25 }.
     milestones: [
