@@ -9,12 +9,12 @@ window.SITE_DATA = {
     releaseDate: "",
     // Add real milestones when announced, e.g. { en: "Story", progress: 25 }.
     milestones: [
-      { en: "Story & Writing", progress: 100 },
-      { en: "UI & Design", progress: 100 },
-      { en: "Images & Visuals", progress: 100 },
-      { en: "Audio & Voice", progress: 100 },
-      { en: "Programming", progress: 100 },
-      { en: "Testing & Polish", progress: 100 }
+      { en: "Story & Writing", progress: 50 },
+      { en: "UI & Design", progress: 50 },
+      { en: "Images & Visuals", progress: 30 },
+      { en: "Audio & Voice", progress: 30 },
+      { en: "Programming", progress: 20 },
+      { en: "Testing & Polish", progress: 0 }
     ]
   }
 };
