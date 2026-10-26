@@ -21,14 +21,14 @@
   function safeUrl(value){try{const url=new URL(value);return url.protocol==='https:'?url.href:null;}catch{return null;}}
   function setProgress(){
     $('creator-name').textContent=data.developerName;
-    const c=data.chapter4;
+    const c=data.chapter5||data.chapter4;
     const total=$('overall-track').closest('.total-progress');
     const show=validPercent(c.overall);
     total.firstElementChild.hidden=!show;
     $('overall-track').hidden=!show;
     if(show){$('overall-value').textContent=c.overall+'%';$('overall-fill').style.width=c.overall+'%';$('overall-track').setAttribute('aria-valuenow',c.overall);$('overall-track').setAttribute('aria-valuemin','0');$('overall-track').setAttribute('aria-valuemax','100');}
-    $('progress-note').textContent='Latest from Mai Mahran · September 18, 2026';
-    if(c.updatedAt){const date=new Date(c.updatedAt+'T12:00:00');if(!Number.isNaN(date.valueOf()))$('progress-note').textContent=('Last updated · ')+new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'long',day:'numeric'}).format(date);}
+    $('progress-note').textContent='Latest development update';
+    if(c.updatedAt){const date=new Date(c.updatedAt+'T12:00:00');if(!Number.isNaN(date.valueOf()))$('progress-note').textContent=('Last updated آ· ')+new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'long',day:'numeric'}).format(date);}
     $('milestones').replaceChildren();
     for(const task of c.milestones){
       const row=element('div','milestone');const title=task.en||task.en;row.append(element('span','',title));
@@ -43,7 +43,7 @@
     for(const platform of ['android','ios']){
       const url=safeUrl(data.links[platform]);const item=element(url?'a':'div','store-link'+(url?'':' pending'));
       if(url){item.href=url;item.target='_blank';item.rel='noopener noreferrer';}
-      const icon=element('span','store-icon',platform==='android'?'▶':'◌');icon.setAttribute('aria-hidden','true');item.append(icon);
+      const icon=element('span','store-icon',platform==='android'?'â–¶':'â—Œ');icon.setAttribute('aria-hidden','true');item.append(icon);
       const copy=element('span');copy.append(element('small','',url?('AVAILABLE ON'):('IN REVIEW')),element('strong','',platform==='android'?'Google Play':'App Store'));item.append(copy);parent.append(item);
     }
     $('download-note').textContent=safeUrl(data.links.ios)?'':('The iPhone version is under Apple review. The download link will appear when it is available.');
@@ -55,7 +55,7 @@
     if(!receiving){for(const option of scene.steps[stage]?.choices||[]){const button=element('button','',option.label);button.dataset.choice=option.id;button.addEventListener('click',()=>choose(option.id));choices.append(button);}}
     if(!receiving&&stage===scene.steps.length){const end=element('div','conversation-end');end.append(element('span','mono','THE THREAT IS ONLY THE BEGINNING'),element('p','','Someone wants the truth buried. Find out why.'));const link=element('a','button primary','Play free on Google Play');link.href=safeUrl(data.links.android)||'#download';link.target='_blank';link.rel='noopener noreferrer';end.append(link,element('small','teaser-free','Free to play. No paid choices.'));choices.append(end);}
     if(typing){const dots=element('div','bubble typing-bubble');dots.setAttribute('aria-hidden','true');for(let i=0;i<3;i++)dots.append(element('span'));log.append(dots);}
-    $('typing-status').textContent=typing?'Unknown Number is typing…':receiving?'Delivered':stage===scene.steps.length?'Unknown Number went offline':'Your turn';
+    $('typing-status').textContent=typing?'Unknown Number is typingâ€¦':receiving?'Delivered':stage===scene.steps.length?'Unknown Number went offline':'Your turn';
     log.scrollTop=log.scrollHeight;
   }
   function choose(choice){
