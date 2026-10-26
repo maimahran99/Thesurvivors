@@ -2,7 +2,7 @@
    Store links must be the verified official URLs. Never put secrets in this file. */
 window.SITE_DATA = {
   developerName: "Mai Mahran",
-  links: { android: "https://play.google.com/store/apps/details?id=com.thesurvivors.game", ios: "" },
+  links: { android: "https://play.google.com/store/apps/details?id=com.thesurvivors.game", ios: "https://apps.apple.com/app/the-survivors-mystery-story/id6813214748" },
   chapter4: {
     overall: null,
     updatedAt: "2026-10-27",
