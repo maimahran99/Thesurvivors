@@ -43,7 +43,7 @@
     for(const platform of ['android','ios']){
       const url=safeUrl(data.links[platform]);const item=element(url?'a':'div','store-link'+(url?'':' pending'));
       if(url){item.href=url;item.target='_blank';item.rel='noopener noreferrer';}
-      const icon=element('span','store-icon',platform==='android'?'â–¶':'â—Œ');icon.setAttribute('aria-hidden','true');item.append(icon);
+      const icon=element('span','store-icon',platform==='android'?'â–¶':'A');icon.setAttribute('aria-hidden','true');item.append(icon);
       const copy=element('span');copy.append(element('small','',url?('AVAILABLE ON'):('IN REVIEW')),element('strong','',platform==='android'?'Google Play':'App Store'));item.append(copy);parent.append(item);
     }
     $('download-note').textContent=safeUrl(data.links.ios)?'':('The iPhone version is under Apple review. The download link will appear when it is available.');
